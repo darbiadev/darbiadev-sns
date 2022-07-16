@@ -1,4 +1,4 @@
-# darbiadev-sns
+# darbiadev-sands
 
 A wrapper for S&S' API.
 

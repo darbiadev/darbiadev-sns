@@ -26,7 +26,9 @@ extensions = [
 ]
 
 autoapi_type: str = "python"
-autoapi_dirs: list[str] = ["../../src"]
+autoapi_add_toctree_entry: bool = False
+autoapi_python_use_implicit_namespaces: bool = True
+autoapi_dirs: list[str] = ["../../src/darbia/"]
 
 intersphinx_mapping = {"python": ("https://docs.python.org/3", None)}
 

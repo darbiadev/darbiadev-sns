@@ -1,2 +1,7 @@
 # JetBrains
 .idea
+
+# Packaging
+build
+dist
+*.egg-info

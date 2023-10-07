@@ -1,5 +1,6 @@
 """Interacting with S&S' API."""
 
+import uuid
 from typing import Any, Self
 
 from httpx import Client
@@ -16,6 +17,18 @@ class SandSServices:
         account_number: str,
         token: str,
     ) -> None:
+        try:
+            int(account_number)
+        except ValueError as exception:
+            msg = "Account number is not a valid number!"
+            raise TypeError(msg) from exception
+
+        try:
+            uuid.UUID(token)
+        except ValueError as exception:
+            msg = "Token is not a valid UUID!"
+            raise TypeError(msg) from exception
+
         self.client = Client(auth=(account_number, token))
         self.base_url = base_url
 
